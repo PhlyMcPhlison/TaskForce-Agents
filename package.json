@@ -1,0 +1,130 @@
+{
+  "name": "taskforce-agents",
+  "version": "1.0.0",
+  "description": "OmniTasker AI Agent System with 25 specialized OmniMinion agents for autonomous project management",
+  "main": "omni-minion-26/omni-minion-26.js",
+  "scripts": {
+    "start": "node omni-minion-26/omni-minion-26.js",
+    "dev": "nodemon omni-minion-26/omni-minion-26.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "deploy": "python OMNIMINIONS_DEPLOYMENT_SYSTEM.py",
+    "build": "npm run lint && npm run test",
+    "setup": "npm install && pip install -r requirements.txt",
+    "baby-sitter": "python omni-baby-sitter.py",
+    "project-manager": "python omni-project-manager.py",
+    "integration-test": "python integration-test.py",
+    "launch-complete": "python Launch_Complete_OmniTasker.py",
+    "launch-desktop": "python OmniTasker_Desktop.py",
+    "launch-gui": "python OmniTasker_ProjectManager_GUI.py"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "automation",
+    "project-management",
+    "omnitasker",
+    "omniminion",
+    "autonomous",
+    "taskforce",
+    "enterprise",
+    "development"
+  ],
+  "author": "TaskForce-Agents Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhlyMcPhlison/TaskForce-Agents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PhlyMcPhlison/TaskForce-Agents/issues"
+  },
+  "homepage": "https://github.com/PhlyMcPhlison/TaskForce-Agents#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "axios": "^1.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4",
+    "rate-limiter-flexible": "^2.4.2",
+    "winston": "^3.10.0",
+    "joi": "^17.9.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.4",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.5",
+    "sqlite3": "^5.1.6",
+    "sequelize": "^6.32.1",
+    "redis": "^4.6.8",
+    "bull": "^4.11.3",
+    "ws": "^8.13.0",
+    "uuid": "^9.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "boxen": "^5.1.2",
+    "figlet": "^1.6.0",
+    "gradient-string": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.6.4",
+    "supertest": "^6.3.3",
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "prettier": "^3.0.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!node_modules/**",
+      "!coverage/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  }
+}
